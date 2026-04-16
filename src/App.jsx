@@ -1,16 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Drivers from "./pages/Drivers";
+import Races from "./pages/Races";
+import Favourites from "./pages/Favourites";
 
-function App() {
-
+export default function App() {
   return (
-    <div className="container">
-      <p className="title">F1 Pitstop</p> 
-    </div>
-  )
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/drivers" element={<Drivers />} />
+        <Route path="/races" element={<Races />} />
+        <Route path="/favourites" element={<Favourites />} />
+      </Routes>
+    </>
+  );
 }
-
-export default App
