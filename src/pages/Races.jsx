@@ -35,7 +35,7 @@ export default function Races() {
   return (
     <div className="page">
       <div className="page-header">
-        <h1>2025 Season Schedule</h1>
+        <h1>2026 Season Schedule</h1>
         <p>Full Formula 1 race calendar</p>
       </div>
       <div className="race-filters">

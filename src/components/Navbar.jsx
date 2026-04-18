@@ -20,6 +20,7 @@ export default function Navbar() {
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/drivers">Drivers</Link></li>
+        <li><Link to="/teams">Teams</Link></li>
         <li><Link to="/races">Races</Link></li>
         {currentUser && <li><Link to="/favourites">Favourites</Link></li>}
       </ul>
