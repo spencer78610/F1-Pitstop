@@ -1,82 +1,87 @@
+@use 'variables' as *;
 
-/* AUTH PAGES */
 .auth-container {
   max-width: 400px;
   margin: 80px auto;
-  background-color: var(--dark);
+  background-color: $dark;
   padding: 40px;
   border-radius: 8px;
-  border-top: 4px solid var(--red);
-}
+  border-top: 4px solid $red;
 
-.auth-container h2 {
-  font-size: 24px;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+  @media (max-width: $breakpoint-mobile) {
+    margin: 40px 16px;
+    padding: 24px;
+  }
 
-.auth-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+  h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 
-.auth-container input {
-  padding: 12px 16px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  background-color: #222;
-  color: var(--white);
-  font-size: 14px;
-  outline: none;
-  transition: border 0.2s;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-.auth-container input:focus {
-  border-color: var(--red);
-}
+  input {
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: $white;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
 
-.auth-container button {
-  padding: 12px;
-  background-color: var(--red);
-  color: var(--white);
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-  margin-top: 6px;
-}
+    &:focus {
+      border-color: $red;
+    }
+  }
 
-.auth-container button:hover {
-  opacity: 0.85;
-}
+  button {
+    padding: 12px;
+    background-color: $red;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 6px;
 
-.auth-container p {
-  margin-top: 20px;
-  font-size: 13px;
-  color: var(--gray);
-  text-align: center;
-}
+    &:hover {
+      opacity: 0.85;
+    }
+  }
 
-.auth-container p a {
-  color: var(--red);
-  text-decoration: none;
-  font-weight: bold;
-}
+  p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: $gray;
+    text-align: center;
 
-.auth-container p a:hover {
-  text-decoration: underline;
+    a {
+      color: $red;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .auth-error {
   background-color: rgba(225, 6, 0, 0.15);
-  border: 1px solid var(--red);
-  color: var(--red);
+  border: 1px solid $red;
+  color: $red;
   padding: 10px 14px;
   border-radius: 4px;
   font-size: 13px;

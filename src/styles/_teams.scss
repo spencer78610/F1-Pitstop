@@ -1,41 +1,60 @@
-/* TEAMS */
+@use 'variables' as *;
+
 .teams-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .team-card {
-  background-color: var(--dark);
+  background-color: $dark;
   border-radius: 8px;
   padding: 22px;
-  border-top: 3px solid var(--red);
+  border-top: 3px solid $red;
   cursor: pointer;
   transition: transform 0.2s;
   display: flex;
   flex-direction: column;
   gap: 14px;
-}
 
-.team-card:hover {
-  transform: translateY(-4px);
-}
+  &:hover {
+    transform: translateY(-4px);
+  }
 
-.team-card-header h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 4px;
+  &-header {
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &-footer {
+    margin-top: auto;
+  }
+
+  &-link {
+    font-size: 12px;
+    color: $red;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 }
 
 .team-nationality {
   font-size: 13px;
   color: #aaa;
-}
-
-.team-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .team-stat {
@@ -45,34 +64,28 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #2a2a2a;
   color: #ccc;
+
+  span:first-child {
+    color: #aaa;
+  }
+
+  &.highlight {
+    span:last-child {
+      color: gold;
+      font-weight: bold;
+    }
+  }
 }
 
-.team-stat span:first-child {
-  color: #aaa;
-}
-
-.team-stat.highlight span:last-child {
-  color: gold;
-  font-weight: bold;
-}
-
-.team-card-footer {
-  margin-top: auto;
-}
-
-.team-card-link {
-  font-size: 12px;
-  color: var(--red);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* TEAM DETAIL */
+// Team Detail
 .team-detail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .team-drivers-list {
@@ -94,7 +107,7 @@
 .team-driver-number {
   font-size: 18px;
   font-weight: bold;
-  color: var(--red);
+  color: $red;
   width: 40px;
 }
 

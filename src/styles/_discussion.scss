@@ -1,17 +1,22 @@
-/* DISCUSSION BOARD */
+@use 'variables' as *;
+
 .discussion-board {
-  background-color: var(--dark);
+  background-color: $dark;
   border-radius: 8px;
   padding: 28px;
-  border-top: 3px solid var(--red);
+  border-top: 3px solid $red;
   margin-top: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 16px;
+  }
 }
 
 .discussion-title {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--red);
+  color: $red;
   margin-bottom: 20px;
 }
 
@@ -26,16 +31,16 @@
   color: #aaa;
   font-size: 14px;
   margin-top: 16px;
-}
 
-.discussion-login a {
-  color: var(--red);
-  text-decoration: none;
-  font-weight: bold;
-}
+  a {
+    color: $red;
+    text-decoration: none;
+    font-weight: bold;
 
-.discussion-login a:hover {
-  text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .comments-list {
@@ -51,47 +56,53 @@
   border-radius: 6px;
   padding: 14px;
   position: relative;
-}
 
-.comment-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
 
-.comment-author {
-  font-weight: bold;
-  font-size: 13px;
-  color: var(--red);
-}
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
 
-.comment-date {
-  font-size: 11px;
-  color: #666;
-}
+  &-author {
+    font-weight: bold;
+    font-size: 13px;
+    color: $red;
+  }
 
-.comment-message {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.5;
-}
+  &-date {
+    font-size: 11px;
+    color: #666;
+  }
 
-.comment-delete {
-  background: transparent;
-  border: none;
-  color: #555;
-  font-size: 11px;
-  cursor: pointer;
-  margin-top: 8px;
-  padding: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.2s;
-}
+  &-message {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+  }
 
-.comment-delete:hover {
-  color: var(--red);
+  &-delete {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 8px;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 .comment-form {
@@ -104,24 +115,24 @@
   background-color: #222;
   border: 1px solid #333;
   border-radius: 4px;
-  color: var(--white);
+  color: $white;
   font-size: 14px;
   padding: 12px;
   resize: vertical;
   outline: none;
   transition: border 0.2s;
   font-family: inherit;
-}
 
-.comment-input:focus {
-  border-color: var(--red);
+  &:focus {
+    border-color: $red;
+  }
 }
 
 .comment-submit {
   align-self: flex-end;
   padding: 10px 24px;
-  background-color: var(--red);
-  color: var(--white);
+  background-color: $red;
+  color: $white;
   border: none;
   border-radius: 4px;
   font-size: 13px;
@@ -130,8 +141,8 @@
   letter-spacing: 1px;
   cursor: pointer;
   transition: opacity 0.2s;
-}
 
-.comment-submit:hover {
-  opacity: 0.85;
+  &:hover {
+    opacity: 0.85;
+  }
 }
