@@ -1,44 +1,60 @@
-/* HOME */
+@use 'variables' as *;
+
 .hero {
-  background: linear-gradient(135deg, var(--dark) 0%, #2a0000 100%);
-  border-bottom: 3px solid var(--red);
+  background: linear-gradient(135deg, $dark 0%, #2a0000 100%);
+  border-bottom: 3px solid $red;
   padding: 60px 30px;
   text-align: center;
-}
 
-.hero h1 {
-  font-size: 42px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 12px;
-}
+  @media (max-width: $breakpoint-mobile) {
+    padding: 40px 16px;
+  }
 
-.hero h1 span {
-  color: var(--red);
-}
+  h1 {
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
 
-.hero p {
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 24px;
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    span {
+      color: $red;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 24px;
+  }
 }
 
 .hero-btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: var(--red);
-  color: var(--white);
+  background-color: $red;
+  color: $white;
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: opacity 0.2s;
-}
+  border: none;
+  cursor: pointer;
 
-.hero-btn:hover {
-  opacity: 0.85;
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .home-grid {
@@ -48,26 +64,31 @@
   padding: 40px 30px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
+    padding: 24px 16px;
+  }
 }
 
 .card {
-  background-color: var(--dark);
+  background-color: $dark;
   border-radius: 8px;
   padding: 28px;
-  border-top: 3px solid var(--red);
-}
+  border-top: 3px solid $red;
 
-.card h2 {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--red);
-  margin-bottom: 16px;
-}
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $red;
+    margin-bottom: 16px;
+  }
 
-.card h3 {
-  font-size: 22px;
-  margin-bottom: 6px;
+  h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
 }
 
 .location {
@@ -85,22 +106,26 @@
 .countdown {
   font-size: 28px;
   font-weight: bold;
-  color: var(--red);
+  color: $red;
   letter-spacing: 2px;
   margin-bottom: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 20px;
+  }
 }
 
 .card-link {
-  color: var(--red);
+  color: $red;
   text-decoration: none;
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
 
-.card-link:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .standings-list {
@@ -142,39 +167,6 @@
 
 .points {
   font-weight: bold;
-  color: var(--red);
+  color: $red;
   font-size: 15px;
-}
-
-.loading {
-  text-align: center;
-  padding: 80px;
-  font-size: 18px;
-  color: #aaa;
-}
-
-/* PAGE HEADER */
-.page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 30px;
-}
-
-.page-header {
-  margin-bottom: 32px;
-  border-left: 4px solid var(--red);
-  padding-left: 16px;
-}
-
-.page-header h1 {
-  font-size: 28px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.page-header p {
-  color: #aaa;
-  font-size: 14px;
-  margin-top: 4px;
 }

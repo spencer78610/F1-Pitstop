@@ -1,36 +1,56 @@
+@use 'variables' as *;
 
-/* DRIVER CARDS */
 .drivers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 }
 
 .driver-card {
-  background-color: var(--dark);
+  background-color: $dark;
   border-radius: 8px;
-  border-top: 3px solid var(--red);
+  border-top: 3px solid $red;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   transition: transform 0.2s;
-}
 
-.driver-card:hover {
-  transform: translateY(-4px);
-}
+  &:hover {
+    transform: translateY(-4px);
+  }
 
-.driver-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-body {
+    h3 {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+  }
 }
 
 .driver-number {
   font-size: 22px;
   font-weight: bold;
-  color: var(--red);
+  color: $red;
 }
 
 .driver-short {
@@ -40,15 +60,9 @@
   letter-spacing: 2px;
 }
 
-.driver-card-body h3 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
 .driver-team {
   font-size: 13px;
-  color: var(--red);
+  color: $red;
   margin-bottom: 4px;
 }
 
@@ -56,13 +70,6 @@
 .driver-dob {
   font-size: 12px;
   color: #aaa;
-}
-
-.driver-card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
 }
 
 .driver-points {
@@ -74,18 +81,17 @@
 
 .fav-btn {
   background: transparent;
-  border: 1px solid var(--red);
-  color: var(--red);
+  border: 1px solid $red;
+  color: $red;
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 12px;
   cursor: pointer;
   transition: all 0.2s;
-}
 
-.fav-btn:hover,
-.fav-btn.fav-active {
-  background-color: var(--red);
-  color: var(--white);
+  &:hover,
+  &.fav-active {
+    background-color: $red;
+    color: $white;
+  }
 }
-

@@ -1,0 +1,62 @@
+// src/styles/_shared.scss
+@use 'variables' as *;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 30px;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 24px 16px;
+  }
+}
+
+.page-header {
+  margin-bottom: 32px;
+  border-left: 4px solid $red;
+  padding-left: 16px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 80px;
+  font-size: 18px;
+  color: #aaa;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  p {
+    font-size: 18px;
+  }
+}
