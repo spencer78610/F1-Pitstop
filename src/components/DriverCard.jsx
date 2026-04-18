@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { db } from "../../firebase";
 import { doc, setDoc, deleteDoc } from "firebase/firestore";
 
-export default function DriverCard({ driver, isFavourite, onFavouriteToggle }) {
+export default function DriverCard({ driver, points, isFavourite, onFavouriteToggle }) {
   const { currentUser } = useAuth();
 
   async function handleFavourite() {
@@ -17,7 +17,6 @@ export default function DriverCard({ driver, isFavourite, onFavouriteToggle }) {
     if (onFavouriteToggle) onFavouriteToggle(driver.driverId);
   }
 
-  // Format team name nicely from teamId e.g. "red_bull" -> "Red Bull"
   const teamName = driver.teamId
     ? driver.teamId.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
     : "Unknown Team";
@@ -33,11 +32,9 @@ export default function DriverCard({ driver, isFavourite, onFavouriteToggle }) {
         <p className="driver-team">{teamName}</p>
         <p className="driver-nationality">🌍 {driver.nationality}</p>
         <p className="driver-dob">🎂 {driver.birthday}</p>
+        <p className="driver-points">🏆 {points} pts</p>
       </div>
       <div className="driver-card-footer">
-        <a href={driver.url} target="_blank" rel="noreferrer" className="wiki-link">
-          Wikipedia →
-        </a>
         {currentUser && (
           <button
             onClick={handleFavourite}
