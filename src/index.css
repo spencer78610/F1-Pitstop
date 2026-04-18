@@ -644,3 +644,18 @@ body {
   font-size: 13px;
   color: #aaa;
 }
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-state p {
+  font-size: 18px;
+}
