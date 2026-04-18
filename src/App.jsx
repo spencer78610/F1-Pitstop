@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Drivers from "./pages/Drivers";
 import Races from "./pages/Races";
 import Favourites from "./pages/Favourites";
+import RaceDetail from "./pages/RaceDetail";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/drivers" element={<Drivers />} />
         <Route path="/races" element={<Races />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/races/:raceId" element={<RaceDetail />} />
       </Routes>
     </>
   );
